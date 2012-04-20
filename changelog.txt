@@ -1,0 +1,6 @@
+<b>2.1.2</b>
+Eden
+-Channels - Cancelled channels removed
+-Channels - Sources for j24/p24 updated to improve stability
+-Settings - Disable GEOIP restricted channels
+
