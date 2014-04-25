@@ -38,7 +38,7 @@ IMG_DIR = os.path.join(settings.getAddonInfo("path"),"resources", "media")
 ###
 API_URL = 'http://ida.omroep.nl/aapi/?stream='
 BASE_URL = 'http://livestreams.omroep.nl/live/npo/'
-USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 5_1 like Mac OS X) AppleWebKit/534.46 (KHTML, like Gecko) Version/5.1 Mobile/9B176 Safari/7534.48.3'
+USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53'
 
 CHANNELS = [
   
