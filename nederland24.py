@@ -64,11 +64,17 @@ def index():
         else:
             #print ""
             xbmc.log("plugin.video.nederland24:: %s not set (GEOIP)" % str(channel[0]))
-    if settings.getSetting( "Additional Journaal Channels" )=='true':
-        additionalChannels()
+    if int(settings.getSetting ( "Depth_Acht" ))!=0:
+        url='http://feeds.nos.nl/journaal20uur'
+        depth=int(settings.getSetting ( "Depth_Acht" ))
+        additionalChannels(url, depth)
+    if int(settings.getSetting ( "Depth_Jeugd" ))!=0:
+        url='http://feeds.nos.nl/vodcast_jeugdjournaal'
+        depth=int(settings.getSetting ( "Depth_Jeugd" ))
+        additionalChannels(url, depth)
     else:
         #print ""
-        xbmc.log("plugin.video.nederland24:: Additional Journaal channels not set")
+        xbmc.log("plugin.video.nederland24:: No additional channels set")
     xbmcplugin.endOfDirectory(pluginhandle)
 
 def resolve_http_redirect(url, depth=0):
@@ -114,31 +120,20 @@ def addLink(name, url, mode, iconimage, description):
     ok = xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=u, listitem=liz)
     return ok
 
-def additionalChannels():
-    # link_re = re.compile(r'<a.*?</a>', re.S)
-    # video_re = re.compile(r'http://.*\.mp4')
-    # title_re = re.compile(r'<h3>(.*?)</h3>')
-    # meta_re = re.compile(r'<p class="video-meta">(.*?)</p>')
-    # img_re = re.compile(r'<img src="(.*?)"')
-    
-    # URL='http://tv.nos.nl'
-    # html=urllib2.urlopen(URL).read()
-    # for (a, video_url) in zip(link_re.findall(html), video_re.findall(html)):
-    #   a = a.replace('\n', '')
-    #   title = title_re.search(a).group(1).strip()
-    #   meta = ', '.join([meta_part.strip() for meta_part in re.sub(r'\s+', ' ', meta_re.search(a).group(1)).split('<br />')])
-    #   #img = URL + '/browser/' + img_re.search(a).group(1).strip()
-    #   img = os.path.join(IMG_DIR, "placeholder24.png")
-    #   #title = title + ' - ' + meta
-    #   addLink(title, video_url, "playVideo", img, meta)
-
-    URL = 'http://feeds.nos.nl/journaal'
+def additionalChannels(url, depth):
+    i = 0
+    #depth = depth
+    URL = url
+    #URL = 'http://feeds.nos.nl/journaal'
     items = SoupStrainer('item')
     for tag in BeautifulStoneSoup(urllib2.urlopen(URL).read(), parseOnlyThese=items):
-      title = tag.title.contents[0]
-      url = tag.guid.contents[0]
-      img = os.path.join(IMG_DIR, "placeholder24.png")
-      addLink(title, url, "playVideo", img, '')
+        title = tag.title.contents[0]
+        url = tag.guid.contents[0]
+        img = os.path.join(IMG_DIR, "placeholder24.png")
+        addLink(title, url, "playVideo", img, '')
+        i += 1
+        if i == int(depth):
+            break
 
 def playVideo(url):
     media = url
