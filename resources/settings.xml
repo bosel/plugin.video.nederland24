@@ -4,7 +4,7 @@
     <category label="30100">
         <setting id="NPO 101" label="30101" type="bool" default="true" />
         <setting id="NPO Best" label="30102" type="bool" default="true" />
-        <setting id="Cultura" label="30104" type="bool" default="true" />
+        <setting id="NPO Cultura" label="30104" type="bool" default="true" />
         <setting id="NPO Zapp Xtra" label="30105" type="bool" default="true" />
         <setting id="NPO Doc" label="30107" type="bool" default="true" />
         <setting id="NPO Humor TV" label="30108" type="bool" default="true" />
