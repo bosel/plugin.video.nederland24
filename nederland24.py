@@ -38,8 +38,8 @@ IMG_DIR = os.path.join(settings.getAddonInfo("path"),"resources", "media")
 ###
 API_URL = 'http://ida.omroep.nl/aapi/?stream='
 BASE_URL = 'http://livestreams.omroep.nl/live/npo/'
-#USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 7_0 like Mac OS X) AppleWebKit/537.51.1 (KHTML, like Gecko) Version/7.0 Mobile/11A465 Safari/9537.53'
-USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10) AppleWebKit/600.1.25 (KHTML, like Gecko) Version/8.0 Safari/600.1.25'
+#USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B410 Safari/600.1.4'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12'
 REF_URL = 'http://www.npo.nl'
 TOKEN_URL = 'http://ida.omroep.nl/npoplayer/i.js'
 
@@ -157,7 +157,6 @@ def addLink(name, url, mode, iconimage, description):
 
 def additionalChannels(url, depth):
     i = 0
-    #depth = depth
     URL = url
     #URL = 'http://feeds.nos.nl/journaal'
     items = SoupStrainer('item')
