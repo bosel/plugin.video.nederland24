@@ -115,7 +115,30 @@ def collect_token():
     page = response.read()
     response.close()
     token = re.search(r'npoplayer.token = "(.*?)"',page).group(1)
-    return token
+    #xbmc.log("plugin.video.nederland24:: oldtoken: %s" % token)
+    # site change, token invalid, needs to be reordered. Thanks to rieter for figuring this out very quickly.
+    first = -1
+    last = -1
+    for i in range(5, len(token) - 5, 1):
+	#xbmc.log("plugin.video.nederland24:: %s" % token[i])
+        if token[i].isdigit():
+            if first < 0:
+                first = i
+                #xbmc.log("plugin.video.nederland24:: %s" % token[i])
+            elif last < 0:
+                last = i
+                #xbmc.log("plugin.video.nederland24:: %s" % token[i])
+                break
+
+    newtoken = list(token)
+    if first < 0 or last < 0:
+        first = 12
+        last = 13
+    newtoken[first] = token[last]
+    newtoken[last] = token[first]
+    newtoken = ''.join(newtoken)
+    #xbmc.log("plugin.video.nederland24:: newtoken: %s" % newtoken)
+    return newtoken
 
 def addLink(name, url, mode, iconimage, description):
     u = sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+urllib.quote_plus(mode)
