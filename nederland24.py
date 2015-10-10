@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # This file is part of plugin.video.nederland24 ("Nederland24")
 
 # Nederland24 is free software: you can redistribute it and/or modify
@@ -137,8 +139,9 @@ def collect_token():
     newtoken[first] = token[last]
     newtoken[last] = token[first]
     newtoken = ''.join(newtoken)
-    #xbmc.log("plugin.video.nederland24:: newtoken: %s" % newtoken)
+    # xbmc.log("plugin.video.nederland24:: newtoken: %s" % newtoken)
     return newtoken
+    
 
 def addLink(name, url, mode, iconimage, description):
     u = sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+urllib.quote_plus(mode)
@@ -154,6 +157,7 @@ def addLink(name, url, mode, iconimage, description):
     liz.setProperty('IsPlayable', 'true')
     ok = xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=u, listitem=liz)
     return ok
+    
 
 def additionalChannels(url, depth):
     i = 0
