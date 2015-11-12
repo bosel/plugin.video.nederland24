@@ -24,7 +24,7 @@
     </category>
     <!--Bandwith-->
     <category label="30200">
-        <setting id="GEOIP" label="30202" type="bool" default="false" />
+        <setting id="CLCA" label="30203" type="bool" default="false" />
     </category>    
 </settings>
 
