@@ -35,7 +35,7 @@ pluginhandle = int(sys.argv[1])
 settings = xbmcaddon.Addon(id='plugin.video.nederland24')
 xbmcplugin.setContent(pluginhandle, 'episodes')
 #xbmcplugin.addSortMethod(pluginhandle, xbmcplugin.SORT_METHOD_EPISODE)  #enable for alphabetic listing
-IMG_DIR = os.path.join(settings.getAddonInfo("path"),"resources", "media")
+IMG_DIR = os.path.join(settings.getAddonInfo("path"), "resources", "media")
 
 ###
 API_URL = 'http://ida.omroep.nl/aapi/?stream='
@@ -47,7 +47,7 @@ TOKEN_URL = 'http://ida.omroep.nl/npoplayer/i.js'
 
 CHANNELS = [
   
-  ["NPO 101","npo_101.png","thematv/101tv/101tv.isml/101tv.m3u8","Weg met suffe en saaie tv! Het is tijd voor NPO 101, het 24-uurs jongerenkanaal van BNN en de Publieke Omroep. Met rauwe en brutale programma's, van en voor jongeren. Boordevol hilarische fragmenten, spannende livegames, bizarre experimenten en nieuws over festivals en gratis concertkaartjes. Kijken dus!"],
+  ["NPO 101", "npo_101.png", "thematv/101tv/101tv.isml/101tv.m3u8", "Weg met suffe en saaie tv! Het is tijd voor NPO 101, het 24-uurs jongerenkanaal van BNN en de Publieke Omroep. Met rauwe en brutale programma's, van en voor jongeren. Boordevol hilarische fragmenten, spannende livegames, bizarre experimenten en nieuws over festivals en gratis concertkaartjes. Kijken dus!"],
   ["NPO Best","npo_best.png","thematv/best24/best24.isml/best24.m3u8","NPO Best brengt hoogtepunten uit ruim zestig jaar Nederlandse televisiehistorie. Het is een feelgoodzender waarop u 24 uur per dag de mooiste programma's uit de schatkamer van de Publieke Omroep kunt zien."],
   ["NPO Cultura","npo_cultura.png","thematv/cultura24/cultura24.isml/cultura24.m3u8","NPO Cultura is het digitale themakanaal van de Publieke Omroep voor verdieping in kunst en cultuur. 24 uur per dag programma's uit genres als klassiek, literatuur, dans, theater, pop, jazz, film, drama en beeldende kunst."],
   ["NPO Zapp Xtra","npo_zapp.png","thematv/zappelin24/zappelin24.isml/zappelin24.m3u8","Zappelin Xtra en Zapp Xtra zendt dagelijks, 24 uur per dag en reclamevrij, de beste kinderprogramma's van de publieke omroep uit. Aansluitend op Nederland 3 zendt het themakanaal programma's uit van Zappelin of Zapp. Is op Nederland 3 iets voor kleuters te zien dan richt het themakanaal zich op oudere kinderen, en andersom."],
@@ -61,6 +61,9 @@ CHANNELS = [
   ["NPO Radio 1","npo_radio1.png","visualradio/radio1/radio1.isml/radio1.m3u8","De onafhankelijke nieuws- en sportzender. Als er iets belangrijks gebeurt, in Nederland of in de wereld, luister je NPO Radio 1. Voor de achtergronden en het nieuws van alle kanten. Ook jouw mening telt. Er is veel ruimte voor opinie en debat waar ook luisteraars steevast aan deelnemen."],
   ["NPO Radio 2","npo_radio2.png","visualradio/radio2/radio2.isml/radio2.m3u8","Informatie, actualiteit en het beste uit vijftig jaar popmuziek. Een toegankelijke zender met veel aandacht voor het Nederlandse lied, kleinkunst en cabaret."],
   ["NPO 3FM","npo_3fm.png","visualradio/3fm/3fm.isml/3fm.m3u8","Op NPO 3FM staat de liefde voor muziek centraal. Samen met de luisteraar vindt NPO 3FM nieuwe muziek, nieuw Nederlands poptalent en jong radiotalent. Je komt onze dj's vaak tegen op festivals en concerten."],
+  ["NPO Radio 4", "npo_radio4.png", "visualradio/radio4/radio4.isml/radio4.m3u8", "De klassieke muziekzender voor zowel de ervaren als de nieuwe liefhebber. Naast de mooiste klassieke muziek, brengt NPO Radio 4 jaarlijks ongeveer twaalfhonderd concerten uit 's werelds beroemdste concertzalen. Waaronder drie eigen concertseries."], 
+  ["NPO Radio 5", "npo_radio5.png", "tvlive/mcr1/mcr1.isml/mcr1.m3u8", "Overdag is NPO Radio 5 een sfeervolle zender met vooral evergreens uit de jaren ’60 en ’70. In de avond en het weekeinde brengt NPO Radio 5 beschouwende en informatieve programma’s over: godsdienst, levensbeschouwing en specifieke (sub)culturen."],
+  ["NPO Radio 6", "npo_radio6.png", "visualradio/radio6/radio6.isml/radio6.m3u8", "De Soul & Jazz zender, met muziek van Miles Davis tot Caro Emerald. Onze dj’s en muzikanten nemen je mee op een nationale en internationale ontdekkingstocht. Daarnaast doet NPO Radio 6 jaarlijks verslag van festivals als North Sea Jazz."], 
 ]
 
 ###
