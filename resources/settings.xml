@@ -17,7 +17,7 @@
         <setting id="NPO Radio 2" label="30116" type="bool" default="false" />
         <setting id="NPO 3FM" label="30117" type="bool" default="false" />
         <setting id="NPO Radio 4" label="30118" type="bool" default="false" />
-        <setting id="NPO Radio 5" label="30119" type="bool" default="false" />
+	<!-- <setting id="NPO Radio 5" label="30119" type="bool" default="false" /> -->
         <setting id="NPO Radio 6" label="30120" type="bool" default="false" />
         <setting id="Depth_Acht" label="30151" type="slider"  default="1" range="0,1,10" option="int" />
         <setting id="Depth_Jeugd" label="30152" type="slider"  default="1" range="0,1,10" option="int" />
@@ -25,6 +25,7 @@
     <!--Bandwith-->
     <category label="30200">
         <setting id="CLCA" label="30203" type="bool" default="false" />
+        <setting id="EVENT" label="30204" type="bool" default="false" />
     </category>    
 </settings>
 

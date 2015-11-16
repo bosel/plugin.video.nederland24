@@ -62,10 +62,16 @@ CHANNELS = [
   ["NPO Radio 2", "npo_radio2.png", "visualradio/radio2/radio2.isml/radio2.m3u8", "Informatie, actualiteit en het beste uit vijftig jaar popmuziek. Een toegankelijke zender met veel aandacht voor het Nederlandse lied, kleinkunst en cabaret."],
   ["NPO 3FM", "npo_3fm.png", "visualradio/3fm/3fm.isml/3fm.m3u8", "Op NPO 3FM staat de liefde voor muziek centraal. Samen met de luisteraar vindt NPO 3FM nieuwe muziek, nieuw Nederlands poptalent en jong radiotalent. Je komt onze dj's vaak tegen op festivals en concerten."],
   ["NPO Radio 4", "npo_radio4.png", "visualradio/radio4/radio4.isml/radio4.m3u8", "De klassieke muziekzender voor zowel de ervaren als de nieuwe liefhebber. Naast de mooiste klassieke muziek, brengt NPO Radio 4 jaarlijks ongeveer twaalfhonderd concerten uit 's werelds beroemdste concertzalen. Waaronder drie eigen concertseries."],
-  ["NPO Radio 5", "npo_radio5.png", "tvlive/mcr1/mcr1.isml/mcr1.m3u8", "Overdag is NPO Radio 5 een sfeervolle zender met vooral evergreens uit de jaren ’60 en ’70. In de avond en het weekeinde brengt NPO Radio 5 beschouwende en informatieve programma’s over: godsdienst, levensbeschouwing en specifieke (sub)culturen."],
+  # ["NPO Radio 5", "npo_radio5.png", "tvlive/mcr1/mcr1.isml/mcr1.m3u8", "Overdag is NPO Radio 5 een sfeervolle zender met vooral evergreens uit de jaren ’60 en ’70. In de avond en het weekeinde brengt NPO Radio 5 beschouwende en informatieve programma’s over: godsdienst, levensbeschouwing en specifieke (sub)culturen."],
   ["NPO Radio 6", "npo_radio6.png", "visualradio/radio6/radio6.isml/radio6.m3u8", "De Soul & Jazz zender, met muziek van Miles Davis tot Caro Emerald. Onze dj’s en muzikanten nemen je mee op een nationale en internationale ontdekkingstocht. Daarnaast doet NPO Radio 6 jaarlijks verslag van festivals als North Sea Jazz."],
 ]
 
+EVENTCHANNELS = [
+
+  ["NPO Event 1", "npo_placeholder.png", "tvlive/mcr1/mcr1.isml/mcr1.m3u8", "NPO Evenementkanaal 1."], 
+  ["NPO Event 2", "npo_placeholder.png", "tvlive/mcr2/mcr2.isml/mcr2.m3u8", "NPO Evenementkanaal 2."],
+  ["NPO Event 3", "npo_placeholder.png", "tvlive/mcr3/mcr3.isml/mcr3.m3u8", "NPO Evenementkanaal 3."],
+]
 
 def index():
     for channel in CHANNELS:
@@ -81,6 +87,12 @@ def index():
         url = 'http://feeds.nos.nl/vodcast_jeugdjournaal'
         depth = int(settings.getSetting("Depth_Jeugd"))
         additionalChannels(url, depth)
+    if settings.getSetting("EVENT") == 'true':
+        for channel in EVENTCHANNELS:
+            # if settings.getSetting(channel[0]) == 'true':
+                addLink(channel[0], channel[2], "playVideo", os.path.join(IMG_DIR, channel[1]), channel[3])
+            # else:
+                # xbmc.log("plugin.video.nederland24:: %s not set" % str(channel[0]))
     else:
         xbmc.log("plugin.video.nederland24:: No additional channels set")
     xbmcplugin.endOfDirectory(pluginhandle)

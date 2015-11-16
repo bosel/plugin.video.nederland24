@@ -19,10 +19,11 @@
     <string id="30116">NPO Radio 2 - Live</string>
     <string id="30117">NPO 3FM - Live</string>
     <string id="30118">NPO Radio 4 - Live</string>
-    <string id="30119">NPO Radio 5 - Live</string>
+    <!--<string id="30119">NPO Radio 5 - Live</string>-->
     <string id="30120">NPO Radio 6 - Live</string>
     <string id="30151">Achtuurjournaal, number of previous episodes</string>
     <string id="30152">Jeugdjournaal, number of previous episodes</string>
     <!--Miscellaneous-->
     <string id="30203">Show subtitled programmes if available</string>
+    <string id="30204">Show Eventchannels</string>
 </strings>
