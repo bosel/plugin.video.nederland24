@@ -19,12 +19,13 @@
     <string id="30151">Achtuurjournaal, aantal afleveringen</string>
     <string id="30152">Jeugdjournaal, aantal afleveringen</string>
     <!--Radio-->
-    <string id="30215">NPO Radio 1 - Live</string>
-    <string id="30216">NPO Radio 2 - Live</string>
-    <string id="30217">NPO 3FM - Live</string>
-    <string id="30218">NPO Radio 4 - Live</string>
-    <!--<string id="30219">NPO Radio 5 - Live</string>-->
-    <string id="30220">NPO Radio 6 - Live</string>
+    <string id="30215">NPO Radio 1</string>
+    <string id="30216">NPO Radio 2</string>
+    <string id="30217">NPO 3FM</string>
+    <string id="30218">NPO Radio 4</string>
+    <!--<string id="30219">NPO Radio 5</string>-->
+    <string id="30220">NPO Radio 6</string>
+    <string id="30221">NPO FunX</string>
     <!--Miscellaneous-->
     <string id="30303">Ondertiteling tonen indien beschikbaar</string>
     <string id="30304">Eventmentkanalen tonen</string>

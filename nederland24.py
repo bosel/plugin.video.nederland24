@@ -64,6 +64,7 @@ CHANNELS = [
   ["NPO Radio 4", "npo_radio4.png", "visualradio/radio4/radio4.isml/radio4.m3u8", "De klassieke muziekzender voor zowel de ervaren als de nieuwe liefhebber. Naast de mooiste klassieke muziek, brengt NPO Radio 4 jaarlijks ongeveer twaalfhonderd concerten uit 's werelds beroemdste concertzalen. Waaronder drie eigen concertseries."],
   # ["NPO Radio 5", "npo_radio5.png", "tvlive/mcr1/mcr1.isml/mcr1.m3u8", "Overdag is NPO Radio 5 een sfeervolle zender met vooral evergreens uit de jaren ’60 en ’70. In de avond en het weekeinde brengt NPO Radio 5 beschouwende en informatieve programma’s over: godsdienst, levensbeschouwing en specifieke (sub)culturen."],
   ["NPO Radio 6", "npo_radio6.png", "visualradio/radio6/radio6.isml/radio6.m3u8", "De Soul & Jazz zender, met muziek van Miles Davis tot Caro Emerald. Onze dj’s en muzikanten nemen je mee op een nationale en internationale ontdekkingstocht. Daarnaast doet NPO Radio 6 jaarlijks verslag van festivals als North Sea Jazz."],
+  ["NPO FunX", "npo_funx.png", "visualradio/funx/funx.isml/funx.m3u8", "FunX richt zich op alle jongeren tussen 15 en 35 jaar. Muziekstijlen die op FunX te horen zijn zijn urban, latin, reggae en dancehall, oriental, Turkpop, farsipop, banghra, rai, Frans-Afrikaanse hiphop, Mandopop en andere crossoverstijlen."],
 ]
 
 EVENTCHANNELS = [
