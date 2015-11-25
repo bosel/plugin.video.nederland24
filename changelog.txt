@@ -1,3 +1,8 @@
+[B]4.5.1[/B]
+-Add visual radio channels
+-Enable subtitle streams
+-Add event channels
+
 [B]4.4.1 - Helix[/B]
 -Fix token following site change
 -Add visual radio channels
