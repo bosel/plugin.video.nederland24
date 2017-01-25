@@ -207,7 +207,7 @@ def additionalChannels(url, depth):
 def playVideo(url):
     media = url
     finalUrl = ""
-    if media and media.startswith("http://"):
+    if media and media.startswith("http://") or media.startswith("https://"):
         finalUrl = media
     else:
         URL = API_URL+BASE_URL+media+"&token=%s" % collect_token()
