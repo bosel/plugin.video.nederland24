@@ -23,7 +23,7 @@
         <setting id="NPO 3FM" label="30217" type="bool" default="false" />
         <setting id="NPO Radio 4" label="30218" type="bool" default="false" />
 	<!-- <setting id="NPO Radio 5" label="30219" type="bool" default="false" /> -->
-        <setting id="NPO Radio 6" label="30220" type="bool" default="false" />
+        <!-- <setting id="NPO Radio 6" label="30220" type="bool" default="false" /> -->
         <setting id="NPO FunX" label="30221" type="bool" default="false" />
     </category>
     <!--Misc-->
