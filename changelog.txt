@@ -1,3 +1,7 @@
+[B]4.5.2[/B]
+-Fix journaal channels
+-Remove cancelled channels
+
 [B]4.5.1[/B]
 -Add visual radio channels
 -Enable subtitle streams
