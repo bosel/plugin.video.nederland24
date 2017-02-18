@@ -32,7 +32,7 @@ addon = xbmcaddon.Addon()
 addonId = addon.getAddonInfo('id')
 
 pluginhandle = int(sys.argv[1])
-settings = xbmcaddon.Addon(id='plugin.video.nederland24')
+settings = xbmcaddon.Addon()
 xbmcplugin.setContent(pluginhandle, 'episodes')
 # xbmcplugin.addSortMethod(pluginhandle, xbmcplugin.SORT_METHOD_EPISODE)  #enable for alphabetic listing
 IMG_DIR = os.path.join(settings.getAddonInfo("path"), "resources", "media")
@@ -176,14 +176,15 @@ def collect_token():
 def addLink(name, url, mode, iconimage, description):
     u = sys.argv[0]+"?url="+urllib.quote_plus(url)+"&mode="+urllib.quote_plus(mode)
     ok = True
-    liz = xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
+    #liz = xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
+    liz = xbmcgui.ListItem(name)
+    liz.setArt({"thumb":os.path.join(IMG_DIR, iconimage), "fanart":os.path.join(IMG_DIR, "fanart.png")})
     liz.setInfo(type="Video", infoLabels={"Title": name,
     	                                  "Plot":description,
     	                                  "TVShowTitle":name,
     	                                  "Playcount": 0,
     	                                  })
     
-    liz.setProperty("fanart_image", os.path.join(IMG_DIR, "fanart.png"))
     liz.setProperty('IsPlayable', 'true')
     ok = xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=u, listitem=liz)
     return ok
