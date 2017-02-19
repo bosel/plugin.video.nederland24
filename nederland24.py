@@ -179,13 +179,10 @@ def addLink(name, url, mode, iconimage, description):
     #liz = xbmcgui.ListItem(name, iconImage="DefaultVideo.png", thumbnailImage=iconimage)
     liz = xbmcgui.ListItem(name)
     liz.setArt({"thumb":os.path.join(IMG_DIR, iconimage), "fanart":os.path.join(IMG_DIR, "fanart.png")})
-    liz.setInfo(type="Video", infoLabels={"Title": name,
-    	                                  "Plot":description,
-    	                                  "TVShowTitle":name,
-    	                                  "Playcount": 0,
-    	                                  })
-    
+    liz.setInfo('video', {'title': name, 'plot': description, 'tvshowtitle': name,
+                          'playcount': 0})
     liz.setProperty('IsPlayable', 'true')
+
     ok = xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]), url=u, listitem=liz)
     return ok
 
