@@ -40,8 +40,8 @@ IMG_DIR = os.path.join(settings.getAddonInfo("path"), "resources", "media")
 ###
 API_URL = 'http://ida.omroep.nl/aapi/?stream='
 BASE_URL = 'http://livestreams.omroep.nl/live/npo/'
-#USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 8_1 like Mac OS X) AppleWebKit/600.1.4 (KHTML, like Gecko) Version/8.0 Mobile/12B410 Safari/600.1.4'
-USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_4) AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12'
+#USER_AGENT = 'Mozilla/5.0 (iPad; CPU OS 10_0 like Mac OS X) AppleWebKit/602.1.38 (KHTML, like Gecko) Version/10.0 Mobile/14A300 Safari/602.1'
+USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/602.4.8 (KHTML, like Gecko) Version/10.0.3 Safari/602.4.8'
 REF_URL = 'http://www.npo.nl'
 TOKEN_URL = 'http://ida.omroep.nl/npoplayer/i.js'
 
