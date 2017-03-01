@@ -197,7 +197,7 @@ def playVideo(url):
         response = urllib2.urlopen(req)
         page = response.read()
         response.close()
-        videopre = re.search(r'http:(.*?)url', page).group()
+        videopre = re.search(r'(http:.*?)\"', page).group(1)
         prostream = (videopre.replace('\/', '/'))
 	intermediateURL=resolve_http_redirect(prostream)
 	xbmc.log("plugin.video.nederland24:: intermediate URL %s" % str(intermediateURL))
@@ -209,7 +209,7 @@ def playVideo(url):
         page = response.read()
 	xbmc.log("plugin.video.nederland24:: Videopage %s" % str(page))
         response.close()
-        videopre = re.search(r'http:(.*?)m3u8', page).group()
+        videopre = re.search(r'(http:.*?)\"', page).group(1)
         prostream = (videopre.replace('\/', '/'))
 	xbmc.log("plugin.video.nederland24:: final URL %s" % str(prostream))	
 	
