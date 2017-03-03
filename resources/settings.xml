@@ -26,7 +26,7 @@
     <!--Misc-->
     <category label="30300">
         <setting id="CLCA" label="30303" type="bool" default="false" />
-        <setting id="EVENT" label="30304" type="bool" default="false" />
+        <!-- <setting id="EVENT" label="30304" type="bool" default="false" /> -->
     </category> /category>    
 </settings>
 
