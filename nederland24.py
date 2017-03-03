@@ -88,7 +88,7 @@ def index():
         url = 'http://feeds.nos.nl/vodcast_jeugdjournaal'
         depth = int(settings.getSetting("Depth_Jeugd"))
         additionalChannels(url, depth)
-    if settings.getSetting("EVENT") == 'true':
+    if settings.getSetting("EVENT") == 'TODO: disabled':
         for channel in EVENTCHANNELS:
             # if settings.getSetting(channel[0]) == 'true':
                 addLink(channel[0], channel[2], "playVideo", os.path.join(IMG_DIR, channel[1]), channel[3])
@@ -230,7 +230,8 @@ def parameters_string_to_dict(parameters):
 params = parameters_string_to_dict(sys.argv[2])
 mode = urllib.unquote_plus(params.get('mode', ''))
 url = urllib.unquote_plus(params.get('url', ''))
-prefer_clca()
+# disabled for now
+# prefer_clca()
 
 
 if mode == "playVideo":
