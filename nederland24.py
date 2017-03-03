@@ -46,7 +46,7 @@ REF_URL = 'http://www.npo.nl'
 TOKEN_URL = 'http://ida.omroep.nl/app.php/auth'
 
 CHANNELS = [
- 
+
   ["NPO 1", "npo_1.png", "LI_NL1_4188102", "Televisiekijken begint op NPO 1. Van nieuws en actualiteiten tot consumentenprogramma's en kwaliteitsdrama. Programma's die over jou en jouw wereld gaan. Met verhalen die je herkent over mensen die zomaar in je straat kunnen wonen. Ook als er iets belangrijks gebeurt, in Nederland of in de wereld, kijk je NPO 1."],
   ["NPO 2", "npo_2.png", "LI_NL2_4188105", "NPO 2 zet je aan het denken. Met programma's die verdiepen en inspireren. Als je wilt weten wat het verhaal achter de actualiteit is. Of als je het eens van een andere kant wilt bekijken. NPO 2 biedt het mooiste van Nederlandse en internationale kunst en cultuur, literatuur, documentaires, art-house films en kwaliteitsdrama."],
   ["NPO 3", "npo_3.png", "LI_NL3_4188107", "Op NPO 3 vind je programma's waar jong Nederland zich in herkent en die je uitdagen een eigen mening te vormen. Met veel aandacht voor nieuwe media en experimentele vernieuwing brengt NPO 3 een gevarieerd aanbod van de dagelijkse actualiteit tot muziek, reizen, human interest, talkshows en documentaires."],
@@ -197,20 +197,19 @@ def playVideo(url):
         response.close()
         videopre = re.search(r'(http:.*?)\"', page).group(1)
         prostream = (videopre.replace('\/', '/'))
-	intermediateURL=resolve_http_redirect(prostream)
-	xbmc.log("plugin.video.nederland24:: intermediate URL %s" % str(intermediateURL))
-	req = urllib2.Request(intermediateURL)
+        intermediateURL=resolve_http_redirect(prostream)
+        xbmc.log("plugin.video.nederland24:: intermediate URL %s" % str(intermediateURL))
+        req = urllib2.Request(intermediateURL)
         req.add_header('User-Agent', USER_AGENT)
         req.add_header('Referer', REF_URL)
         req.add_header('HTTP_NPOPLAYER_VERSION', '7.2.4')
         response = urllib2.urlopen(req)
         page = response.read()
-	xbmc.log("plugin.video.nederland24:: Videopage %s" % str(page))
+        xbmc.log("plugin.video.nederland24:: Videopage %s" % str(page))
         response.close()
         videopre = re.search(r'(http:.*?)\"', page).group(1)
         prostream = (videopre.replace('\/', '/'))
-	xbmc.log("plugin.video.nederland24:: final URL %s" % str(prostream))	
-	
+        xbmc.log("plugin.video.nederland24:: final URL %s" % str(prostream))
         finalUrl = resolve_http_redirect(prostream)
     if finalUrl:
         listitem = xbmcgui.ListItem(path=finalUrl)
