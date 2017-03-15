@@ -69,9 +69,9 @@ CHANNELS = [
 
 EVENTCHANNELS = [
 
-  ["NPO Event 1", "npo_placeholder.png", "tvlive/mcr1/mcr1.isml/mcr1.m3u8", "NPO Evenementkanaal 1."],
-  ["NPO Event 2", "npo_placeholder.png", "tvlive/mcr2/mcr2.isml/mcr2.m3u8", "NPO Evenementkanaal 2."],
-  ["NPO Event 3", "npo_placeholder.png", "tvlive/mcr3/mcr3.isml/mcr3.m3u8", "NPO Evenementkanaal 3."],
+  ["NPO Event 1", "npo_placeholder.png", "LI_NEDERLAND1_221709", "NPO Evenementkanaal 1."],
+  ["NPO Event 2", "npo_placeholder.png", "LI_NEDERLAND2_221711", "NPO Evenementkanaal 2."],
+  ["NPO Event 3", "npo_placeholder.png", "LI_NEDERLAND3_221713", "NPO Evenementkanaal 3."],
 ]
 
 def index():
@@ -88,7 +88,7 @@ def index():
         url = 'http://feeds.nos.nl/vodcast_jeugdjournaal'
         depth = int(settings.getSetting("Depth_Jeugd"))
         additionalChannels(url, depth)
-    if settings.getSetting("EVENT") == 'TODO: disabled':
+    if settings.getSetting("EVENT") == 'true':
         for channel in EVENTCHANNELS:
             # if settings.getSetting(channel[0]) == 'true':
                 addLink(channel[0], channel[2], "playVideo", os.path.join(IMG_DIR, channel[1]), channel[3])
