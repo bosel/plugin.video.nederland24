@@ -103,11 +103,11 @@ def prefer_clca():
     if settings.getSetting("CLCA") == 'true':
         for channel in CHANNELS:
             if channel[0] == "NPO 1":
-                channel[2] = "tvlive/npo1cc/npo1cc.isml/npo1cc.m3u8"
+                channel[2] = "LI_NL1_824154"
             elif channel[0] == "NPO 2":
-                channel[2] = "tvlive/npo2cc/npo2cc.isml/npo2cc.m3u8"
+                channel[2] = "LI_NL2_824153"
             elif channel[0] == "NPO 3":
-                channel[2] = "tvlive/npo3cc/npo3cc.isml/npo3cc.m3u8"
+                channel[2] = "LI_NL3_824151"
 
 
 def resolve_http_redirect(url, depth=0):
@@ -232,8 +232,7 @@ def parameters_string_to_dict(parameters):
 params = parameters_string_to_dict(sys.argv[2])
 mode = urllib.unquote_plus(params.get('mode', ''))
 url = urllib.unquote_plus(params.get('url', ''))
-# disabled for now
-# prefer_clca()
+prefer_clca()
 
 
 if mode == "playVideo":
