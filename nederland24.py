@@ -209,7 +209,10 @@ def playVideo(url):
         videopre = re.search(r'(http.*?)\"', page).group(1)
         prostream = (videopre.replace('\/', '/'))
         xbmc.log("plugin.video.nederland24:: final URL %s" % str(prostream))
-        finalUrl = resolve_http_redirect(prostream)
+        #no longer required
+        #finalUrl = resolve_http_redirect(prostream)
+        #TODO: this is a workaround for unplayable https urls (might be due to some sort of kodi bug on linux, on osx these play fine)
+        finalUrl = (prostream.replace('https', 'http'))
     if finalUrl:
         listitem = xbmcgui.ListItem(path=finalUrl)
         xbmcplugin.setResolvedUrl(pluginhandle, True, listitem)
