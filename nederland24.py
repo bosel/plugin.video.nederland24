@@ -172,7 +172,7 @@ def additionalChannels(url, depth):
     items = SoupStrainer('item')
     for tag in BeautifulStoneSoup(urllib2.urlopen(URL).read(), parseOnlyThese=items):
         title = tag.title.contents[0]
-        url = tag.guid.contents[0]
+        url = tag.find('media:content')['url']
         img = os.path.join(IMG_DIR, "npo_placeholder.png")
         addLink(title, url, "playVideo", img, '')
         i += 1
